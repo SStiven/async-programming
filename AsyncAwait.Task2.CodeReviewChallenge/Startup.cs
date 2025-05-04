@@ -9,13 +9,17 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace AsyncAwait.CodeReviewChallenge;
 public class Startup
 {
-    public Startup(IConfiguration configuration)
+    private readonly ILogger<Startup> _logger;
+
+    public Startup(IConfiguration configuration, ILogger<Startup> logger)
     {
         Configuration = configuration;
+        _logger = logger;
     }
 
     public IConfiguration Configuration { get; }
