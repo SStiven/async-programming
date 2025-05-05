@@ -35,7 +35,7 @@ public class Startup
         });
 
         services.AddSingleton<IStatisticService, CloudStatisticService>();
-        services.AddSingleton<ISupportService, CloudSupportService>();
+        services.AddScoped<ISupportService, CloudSupportService>();
         services.AddSingleton<IPrivacyDataService, PrivacyDataService>();
         services.AddScoped<IAssistant, ManualAssistant>();
 
